@@ -10,6 +10,19 @@
 <h2>Getting input</h2>
 
 <form>
+    <label for="mystery-color">Guess the color:</label>
+    <input type="password" id="mystery-color" value="Red"><br>
+    
+    <label for="guess-color">Enter a guess:</label>
+    <input type="text" id="guess-color"><br>
+
+    <button type="button" onclick="processColor()">Check the color</button>
+</form>
+
+<p id="result"></p>
+
+
+<form>
     <label for="form1_age">What is your age </label>
     <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
 
@@ -23,6 +36,29 @@
 <p id="result">This text will be replaced </p>
 
 <script> 
+
+    // Global variables
+    let attempts = 0;
+    let wrong = 0;
+
+    // Function to process the color guess
+    function processColor() {
+        // Get the values of the inputs
+        let secretColor = document.getElementById('mystery-color').value;
+        let guessColor = document.getElementById('guess-color').value;
+
+        // Compare the guessed color with the secret color
+        attempts++;
+        if (secretColor.toLowerCase() !== guessColor.toLowerCase()) {
+            wrong++;
+            alert("That was not it.");
+        } else {
+            alert("You got it!");
+        }
+
+        // Update the result paragraph
+        document.getElementById('result').innerHTML = `Attempts: ${attempts}, Wrong: ${wrong}`;
+    }
 
 function resolveForm (){
     console.log("Getting form values")
