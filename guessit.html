@@ -34,6 +34,10 @@
 
 
 <p id="result">This text will be replaced </p>
+<div>
+    <img id="plantImage" src="rose plant.jpg" width="200" height="200" onclick="nextImage()">
+</div>
+
 
 <script> 
 
@@ -73,6 +77,27 @@ function resolveForm (){
         out.innerHTML = "Values were not confirmed"
     }
 }
+
+let showing = 1;
+
+function nextImage() {
+    let image = document.getElementById('plantImage');  // Get the image element
+    switch (showing) {
+        case 1:
+            image.src = "plant2.jpg";  // Change to the second image
+            showing = 2;
+            break;
+        case 2:
+            image.src = "plant3.jpg";  // Change to the third image
+            showing = 3;
+            break;
+        case 3:
+            image.src = "plant1.jpg";  // Change back to the first image
+            showing = 1;
+            break;
+    }
+}
+
 </script>
 
 </body>
