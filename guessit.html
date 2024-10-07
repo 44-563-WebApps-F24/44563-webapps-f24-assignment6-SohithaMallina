@@ -81,18 +81,18 @@ function resolveForm (){
 let showing = 1;
 
 function nextImage() {
-    let image = document.getElementById('plantImage');  // Get the image element
+    let image = document.getElementById('plantImage');
     switch (showing) {
         case 1:
-            image.src = "White Lotus.jpg";  // Change to the second image
+            image.src = "White Lotus.jpg";
             showing = 2;
             break;
         case 2:
-            image.src = "Lavender Plant.jpg";  // Change to the third image
+            image.src = "Lavender Plant.jpg";
             showing = 3;
             break;
         case 3:
-            image.src = "rose plant.jpg";  // Change back to the first image
+            image.src = "rose plant.jpg";
             showing = 1;
             break;
     }
