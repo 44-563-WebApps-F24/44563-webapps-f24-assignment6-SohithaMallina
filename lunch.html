@@ -24,6 +24,27 @@
             document.getElementById('lunchResult').innerHTML = JSON.stringify(my_lunch);
         }
     </script>
+<form>
+    <label for="property">Enter property:</label>
+    <input type="text" id="property" value="drink"><br>
+    <label for="value">Enter value:</label>
+    <input type="text" id="value"><br>
+    <button type="button" onclick="changeLunch()">Change a property</button>
+</form>
+<div id="changeResult"></div>
+<script>
+    function changeLunch() {
+        const prop = document.getElementById('property').value;
+        const val = document.getElementById('value').value;
+
+        if (my_lunch.hasOwnProperty(prop)) {
+            my_lunch[prop] = (val === "true");
+            document.getElementById('changeResult').innerHTML = `Changed ${prop} to ${my_lunch[prop]}`;
+        } else {
+            document.getElementById('changeResult').innerHTML = `${prop} is not a valid property`;
+        }
+    }
+</script>
         
 </body>
 </html> 
