@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head></head>
-
 <body>
     <form>
         <label for="firstValue">Enter a number:</label>
@@ -24,6 +22,38 @@
             document.getElementById('mathResult').innerHTML = `Sum of ${first} powers with base ${second} is ${sum}`;
         }
     </script>
+<form>
+    <label><input type="radio" name="operation" value="max" onclick="processRadio()"> Max</label><br>
+    <label><input type="radio" name="operation" value="min" onclick="processRadio()"> Min</label><br>
+    <label><input type="radio" name="operation" value="avg" onclick="processRadio()"> Average</label><br>
+    <label><input type="radio" name="operation" value="geo" onclick="processRadio()"> Geometric</label><br>
+</form>
+<div id="radioResult"></div>
+<script>
+    function processRadio() {
+        const first = parseInt(document.getElementById('firstValue').value);
+        const second = parseInt(document.getElementById('secondValue').value);
+        let result;
+
+        const operation = document.querySelector('input[name="operation"]:checked').value;
+
+        switch (operation) {
+            case 'max':
+                result = Math.max(first, second);
+                break;
+            case 'min':
+                result = Math.min(first, second);
+                break;
+            case 'avg':
+                result = (first + second) / 2;
+                break;
+            case 'geo':
+                result = Math.sqrt(first * second);
+                break;
+        }
+        document.getElementById('radioResult').innerHTML = `Computed ${operation} with values ${first} and ${second} with result ${result}`;
+    }
+</script>
         
 </body>
 
