@@ -29,11 +29,11 @@
     <input type="text" id="property" value="drink"><br>
     <label for="value">Enter value:</label>
     <input type="text" id="value"><br>
-    <button type="button" onclick="changeLunch()">Change a property</button>
+    <button type="button" onclick="updateLunch()">Change a property</button>
 </form>
 <div id="changeResult"></div>
 <script>
-    function changeLunch() {
+    function updateLunch() {
         const prop = document.getElementById('property').value;
         const val = document.getElementById('value').value;
 
