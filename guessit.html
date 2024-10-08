@@ -37,10 +37,7 @@
 <div>
     <img id="plantImage" src="rose plant.jpg" width="200" height="200" onclick="nextImage()">
 </div>
-
-
 <script> 
-
     // Global variables
     let attempts = 0;
     let wrong = 0;
@@ -50,7 +47,6 @@
         // Get the values of the inputs
         let secretColor = document.getElementById('mystery-color').value;
         let guessColor = document.getElementById('guess-color').value;
-
         // Compare the guessed color with the secret color
         attempts++;
         if (secretColor.toLowerCase() !== guessColor.toLowerCase()) {
@@ -59,11 +55,9 @@
         } else {
             alert("You got it!");
         }
-
         // Update the result paragraph
         document.getElementById('result').innerHTML = `Attempts: ${attempts}, Wrong: ${wrong}`;
     }
-
 function resolveForm (){
     console.log("Getting form values")
     age = document.getElementById("form1_age").value
@@ -77,9 +71,7 @@ function resolveForm (){
         out.innerHTML = "Values were not confirmed"
     }
 }
-
 let showing = 1;
-
 function nextImage() {
     let image = document.getElementById('plantImage');
     switch (showing) {
@@ -97,8 +89,6 @@ function nextImage() {
             break;
     }
 }
-
 </script>
-
 </body>
 </html> 
